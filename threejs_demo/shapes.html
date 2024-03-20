@@ -25,6 +25,7 @@
 	camera.position.z = 50;
 	scene.add(camera);
 
+	//立方体の追加
 	var boxGeometry = new THREE.BoxGeometry(1, 1, 1);
 	var basicMaterial = new THREE.MeshBasicMaterial({color: 0x0095DD});
 	var cube = new THREE.Mesh(boxGeometry, basicMaterial);
@@ -32,17 +33,20 @@
 	cube.rotation.set(0, 0, 0);
 	scene.add(cube);
 
+	//リングの作成
 	var torusGeometry = new THREE.TorusGeometry(7, 1, 6, 12);
 	var phongMaterial = new THREE.MeshPhongMaterial({color: 0xFF9500});
 	var torus = new THREE.Mesh(torusGeometry, phongMaterial);
 	scene.add(torus);
 
+	//十二面体の作成
 	var strangeGeometry = new THREE.DodecahedronGeometry(7);
 	var lambertMaterial = new THREE.MeshLambertMaterial({color: 0xEAEFF2});
 	var dodecahedron = new THREE.Mesh(strangeGeometry, lambertMaterial);
 	dodecahedron.position.x = 25;
 	scene.add(dodecahedron);
 
+	//光源の追加
 	var light = new THREE.PointLight(0xFFFFFF);
 	light.position.set(-10, 15, 50);
 	scene.add(light);
@@ -51,6 +55,7 @@
 	function render() {
 		t += 0.01;
 		requestAnimationFrame(render);
+		// 動作の追加
 		// cube.rotation.x += 0.1;
 		// torus.scale.z = Math.abs(Math.log(t));
 		// dodecahedron.position.y = -7*Math.tan(t*2);
